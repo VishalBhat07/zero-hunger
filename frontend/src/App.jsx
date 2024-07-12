@@ -9,6 +9,7 @@ import Logistics from "./pages/Logistics/Logistics.jsx";
 import Contact from "./pages/Contact/Contact.jsx";
 import Resources from "./pages/Resources/Resources.jsx";
 import Login from "./pages/Login/Login.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/Resources" element={<Resources />} />
         <Route path="/Login" element={<Login />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };

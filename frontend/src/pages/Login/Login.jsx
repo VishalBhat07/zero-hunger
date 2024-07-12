@@ -1,99 +1,141 @@
 import React, { useState } from "react";
-import axios from "axios";
-const Register = () => {
-  const [user, setUser] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setUser({
-      ...user, //spread operator
-      [name]: value,
-    });
+import "./Login.css";
+
+const Login = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isSignUp, setIsSignUp] = useState(false);
+  const [signInSuccess, setSignInSuccess] = useState(false);
+  const [loggedInSuccess, setLoggedInSuccess] = useState(false);
+
+  const handleNameChange = (e) => {
+    setName(e.target.value);
   };
-  //register function
-  const egister = () => {
-    const { name, email, password } = user;
-    if (name && email && password) {
-      axios
-        .post("http://localhost:6969/Register", user)
-        .then((res) => console.log(res));
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSignUpClick = () => {
+    setIsSignUp(true);
+  };
+
+  const handleSignInClick = () => {
+    setIsSignUp(false);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isSignUp) {
+      // Sign up logic here
+      console.log("Sign up:", { name, email, password });
+      // Call API to create new user
+      //...
+      alert("Signed up successfully!");
     } else {
-      alert("invalid input");
+      // Sign in logic here
+      console.log("Sign in:", { email, password });
+      // Call API to authenticate user
+      //...
+      if (signInSuccess) {
+        alert("Logged in successfully!");
+        setLoggedInSuccess(true);
+      } else {
+        alert("Signed in successfully!");
+        setSignInSuccess(true);
+      }
     }
-    return (
-      <>
-        <div class="flex flex-col max-w-md px-4 py-8 bg-white rounded-lg shadow dark:bg-gray-800 sm:px-6 md:px-8 lg:px-10">
-          <div class="self-center mb-2 text-xl font-light text-gray-800 sm:text-2xl dark:text-white">
-            Create a new account
-          </div>
-          <span class="justify-center text-sm text-center text-gray-500 flex-items-center dark:text-gray-400">
-            Already have an account ?
-            <a
-              href="#"
-              target="_blank"
-              class="text-sm text-blue-500 underline hover:text-blue-700"
-            >
-              Sign in
-            </a>
-          </span>
-          <div class="p-6 mt-8">
-            <form action="#">
-              <div class="flex flex-col mb-2">
-                <div class=" relative ">
+  };
+
+  return (
+    <div className="login-wrap">
+      <div className="login-html">
+        <div className="login-form">
+          <form onSubmit={handleSubmit}>
+            {!isSignUp? (
+              <React.Fragment>
+                <div className="group">
+                  <label htmlFor="email">Email:</label>
                   <input
-                    type="text"
-                    id="create-account-pseudo"
-                    class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-                    name="name"
-                    value={user.name}
-                    onChange={handleChange}
-                    placeholder="FullName"
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={handleEmailChange}
                   />
                 </div>
-              </div>
-              <div class="flex gap-4 mb-2">
-                <div class=" relative ">
-                  <input
-                    type="text"
-                    id="create-account-first-name"
-                    class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-                    name="email"
-                    value={user.email}
-                    onChange={handleChange}
-                    placeholder="Email"
-                  />
-                </div>
-              </div>
-              <div class="flex flex-col mb-2">
-                <div class=" relative ">
+                <div className="group">
+                  <label htmlFor="password">Password:</label>
                   <input
                     type="password"
-                    id="create-account-email"
-                    class=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-                    name="password"
-                    value={user.password}
-                    onChange={handleChange}
-                    placeholder="password"
+                    id="password"
+                    value={password}
+                    onChange={handlePasswordChange}
                   />
                 </div>
-              </div>
-              <div class="flex w-full my-4">
-                <button
-                  type="submit"
-                  class="py-2 px-4  bg-purple-600 hover:bg-purple-700 focus:ring-purple-500 focus:ring-offset-purple-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
-                  onClick={egister}
-                >
-                  Register
-                </button>
-              </div>
-            </form>
-          </div>
+                <div className="group">
+                  <input type="submit" value="Sign In" />
+                </div>
+                <div className="group">
+                  <p>
+                    Not registered?{" "}
+                    <a href="#" onClick={handleSignUpClick}>
+                      Register here
+                    </a>
+                  </p>
+                </div>
+              </React.Fragment>
+            ) : (
+              <React.Fragment>
+                <div className="group">
+                  <label htmlFor="name">Name:</label>
+                  <input
+                    type="text"
+                    id="name"
+                    value={name}
+                    onChange={handleNameChange}
+                  />
+                </div>
+                <div className="group">
+                  <label htmlFor="email">Email:</label>
+                  <input
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={handleEmailChange}
+                  />
+                </div>
+                <div className="group">
+                  <label htmlFor="password">Password:</label>
+                  <input
+                    type="password"
+                    id="password"
+                    value={password}
+                    onChange={handlePasswordChange}
+                  />
+                </div>
+                <div className="group">
+                  <input type="submit" value="Sign Up" />
+                </div>
+                <div className="group">
+                  <p>
+                    Already registered?{" "}
+                    <a href="#" onClick={handleSignInClick}>
+                      Sign in here
+                    </a>
+                  </p>
+                </div>
+              </React.Fragment>
+            )}
+          </form>
         </div>
-      </>
-    );
-  };
+      </div>
+    </div>
+  );
 };
-export default Register;
+
+export default Login;
