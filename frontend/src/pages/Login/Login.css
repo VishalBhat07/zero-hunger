@@ -1,64 +1,65 @@
-/* Login.css */
-
-.login-wrap {
+.login {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 50px;
-  background-color: white;
-}
-
-.login-html {
-  width: 400px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  min-height: 70vh; /* Set minimum height for full viewport */
 }
 
 .login-form {
-  margin: 20px;
+  border: 2px solid black;
+  background-color: #fff; /* White background for the form */
+  padding: 40px; /* Add some padding for content */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  width: 350px; /* Set a fixed width for the form */
+  margin-top: 50px;
 }
 
-.group {
-  margin-bottom: 20px;
+.form-group {
+  margin-bottom: 15px; /* Space between form groups */
 }
 
-label {
-  display: block;
-  margin-bottom: 10px;
+.form-group label {
+  display: block; /* Display labels on their own line */
+  margin-bottom: 5px; /* Space between label and input */
+  font-weight: bold; /* Bold text for labels */
 }
 
-input[type="email"],
-input[type="password"],
-input[type="text"] {
-  width: 100%;
-  height: 40px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+.form-group input {
+  display: block; /* Display inputs on their own line */
+  width: 100%; /* Make inputs full width */
+  padding: 10px; /* Add padding for inputs */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 3px; /* Rounded corners for inputs */
+  font-size: 16px; /* Set font size for inputs */
 }
 
-input[type="submit"] {
-  width: 100%;
-  height: 40px;
-  padding: 10px;
-  background-color: #4caf50;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.login-form button {
+  background-color: #8bc34a; /* Forest green background for button */
+  color: #fff; /* White text color */
+  padding: 10px 20px; /* Add padding for button content */
+  border: none; /* Remove default button border */
+  border-radius: 5px; /* Rounded corners for button */
+  cursor: pointer; /* Indicate hover interaction */
+  margin-top: 20px; /* Space between button and other elements */
+  width: 100%; /* Make button full width */
+  font-size: 16px; /* Set font size for button text */
 }
 
-input[type="submit"]:hover {
-  background-color: #3e8e41;
+.login-form button:hover {
+  background-color: #7aa03c; /* Darker green on hover */
 }
 
-a {
-  text-decoration: none;
-  color: #4caf50;
+.login-form p {
+  margin-top: 10px; /* Space between paragraph and link */
+  text-align: center; /* Center text for signup/signin links */
 }
 
-a:hover {
-  color: #3e8e41;
+.login-form a {
+  color: #8bc34a; /* Forest green color for links */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.login-form a:hover {
+  text-decoration: underline; /* Underline links on hover */
 }

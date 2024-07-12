@@ -1,54 +1,66 @@
+/* Contact.css */
+
 .contact-right {
-  max-width: 400px;
-  margin: 40px auto;
+  max-width: 800px;
+  margin: 60px auto;
   padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; /* Add a subtle rounded corner */
+  background-color: #f2f2f2; /* Maintain light background */
 }
 
-form {
+.contact-right form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 20px;
+  gap: 15px; /* Add spacing between form elements */
 }
 
-input[type="text"],
-textarea {
-  width: 100%;
+.contact-right input[type="text"],
+.contact-right textarea {
   padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px; /* Add rounded corners */
+  font-size: 16px;
+  width: 100%; /* Ensure inputs take up full width */
 }
 
-input[type="text"]:focus,
-textarea:focus {
-  border-color: #aaa;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.contact-right textarea {
+  height: 150px; /* Provide more space for messages */
 }
 
-textarea {
-  resize: vertical;
-}
-
-.btn2 {
-  background-color: #8bc34a;
-  color: #fff;
-  padding: 10px 20px;
+.contact-right button.btn2 {
+  background-color: #8bc34a; /* Forest green button */
+  color: white;
   border: none;
-  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
   cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
 }
 
-.btn2:hover {
-  background-color: #c6f7d0;
+.contact-right button.btn2:hover {
+  transform: scale(1.05); /* Subtle hover scale */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Add subtle hover shadow */
 }
 
-#msg {
-  color: #337ab7;
-  font-size: 14px;
+.contact-right button.btn2.disabled {
+  background-color: #ddd; /* Disable button with lighter color */
+  cursor: not-allowed; /* Indicate disabled state visually */
+}
+
+.contact-right #msg {
   margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  /* Maintain existing color scheme logic for success message */
+}
+
+.contact-right #msg.success {
+  color: green; /* Success message color */
+}
+
+/* Optional: Error message styling (if desired) */
+.contact-right #msg.error {
+  color: red; /* Error message color */
 }

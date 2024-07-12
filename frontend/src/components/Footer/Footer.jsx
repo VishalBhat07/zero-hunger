@@ -21,14 +21,26 @@ const Footer = () => {
             doorstep.
           </p>
           <div className="footer-social-icons">
-            <a href="#">
-              <img src="../../../public/icons8-facebook-circled.gif" alt="" />
+            <a
+              href="https://www.instagram.com/vishalbhat07/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-instagram"></i>
             </a>
-            <a href="#">
-              <img src="../../../public/icons8-instagram.gif" alt="" />
+            <a
+              href="https://www.linkedin.com/in/vishalbhat07/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-linkedin"></i>
             </a>
-            <a href="#">
-              <img src="../../../public/icons8-twitter.gif" alt="" />
+            <a
+              href="https://github.com/VishalBhat07"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-github"></i>
             </a>
           </div>
         </div>
@@ -44,8 +56,8 @@ const Footer = () => {
         <div className="footer-content-right">
           <h2>GET IN TOUCH</h2>
           <ul>
-            <li>+91 7975806661</li>
-            <li>contact@FreshFarm.com</li>
+            <li>+91 7975806665</li>
+            <li>vishalbhat@FreshFarm.com</li>
           </ul>
         </div>
       </div>

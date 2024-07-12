@@ -1,75 +1,168 @@
+/* Logistics.css */
+
+/* Base styles */
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Logistics container */
+
 .logistics {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 20px;
+  max-width: 1200px; /* Limit container width */
+  margin: 40px auto; /* Center horizontally */
+  padding: 20px; /* Add some padding */
 }
 
-.hero {
-  background-color: #8bc34a;
-  color: #fff;
-  padding: 40px;
-  text-align: center;
+/* Header */
+
+.header {
+  background-color: #8bc34a; /* Forest green background */
+  color: #fff; /* White text */
+  padding: 40px; /* Top and bottom padding */
+  text-align: center; /* Center text alignment */
 }
 
-.hero h1 {
-  margin-top: 0;
+.header h1 {
+  font-size: 2em; /* Larger heading size */
+  margin-bottom: 10px; /* Space between heading and paragraph */
 }
 
-.section {
-  margin-bottom: 40px;
+.header .delivery-info {
+  display: flex;
+  justify-content: space-between; /* Align delivery info items */
+  margin-top: 20px; /* Space between heading and info */
 }
+
+.header .delivery-info span {
+  font-weight: bold; /* Bold text for delivery info */
+}
+
+/* Main content */
+
+.content {
+  padding: 40px 0; /* Top and bottom padding */
+}
+
+/* Delivery areas section */
+
+.delivery-areas {
+  margin-bottom: 40px; /* Space between sections */
+}
+
+.delivery-areas h2 {
+  font-size: 1.5em; /* Heading size */
+  margin-bottom: 10px; /* Space between heading and list */
+}
+
+.delivery-areas ul {
+  list-style: none; /* Remove default list style */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.delivery-areas li {
+  margin-bottom: 5px; /* Space between list items */
+}
+.flexi {
+  display: flex;
+}
+
+.delivery-areas .check-availability {
+  background-color: #eee; /* Light gray background for button */
+  border: 1px solid #ccc; /* Light gray border */
+  padding: 10px 20px; /* Padding for button content */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Indicate hover interaction */
+  margin-top: 20px; /* Space between list and button */
+}
+
+/* Delivery options section */
 
 .delivery-options {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  margin-bottom: 40px; /* Space between sections */
+}
+
+.delivery-options h2 {
+  font-size: 1.5em; /* Heading size */
+  margin-bottom: 20px; /* Space between heading and options */
+}
+
+.options-grid {
+  display: grid; /* Use grid layout for options */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Responsive columns */
+  gap: 20px; /* Spacing between options */
 }
 
 .option {
-  transition: background-color 0.3s ease; /* add transition effect */
+  background-color: #f5f5f5; /* Light gray background for options */
+  padding: 20px; /* Padding for option content */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  transition: transform 0.3s ease; /* Smooth hover transition */
 }
 
 .option:hover {
-  background-color: #f7f7f7; /* add hover effect */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.option {
-  width: 30%;
-  margin: 20px;
-  text-align: center;
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 10px;
-  transition: background-color 0.3s ease; /* add transition effect */
-}
-
-.option:hover {
-  background-color: #f7f7f7; /* add hover effect */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02); /* Slight zoom on hover */
+  background-color: #8bc34a;
 }
 
 .option h3 {
-  margin-top: 0;
+  font-size: 1.2em; /* Heading size for options */
+  margin-bottom: 10px; /* Space between heading and paragraph */
 }
 
-/* Responsive styles */
+/* Order tracking section */
 
-@media (max-width: 768px) {
-  .delivery-options {
-    flex-direction: column;
-  }
-  .option {
-    width: 100%;
-    margin: 20px 0;
-  }
+.order-tracking {
+  margin-bottom: 40px; /* Space between sections */
+}
+/* Logistics.css */
+
+.delivery-map {
+  width: 65%;
+  height: 250px; /* Adjust height as needed */
+  margin: 0px 200px;
+  border: 2px solid black;
 }
 
-@media (max-width: 480px) {
-  .hero {
-    padding: 20px;
-  }
-  .section {
-    margin-bottom: 20px;
-  }
+.order-tracking h2 {
+  font-size: 1.5em; /* Heading size */
+  margin-bottom: 20px; /* Space between heading and content */
+}
+
+.order-tracking p {
+  margin-bottom: 20px; /* Space between paragraph and form */
+}
+
+.tracking-form {
+  display: flex; /* Keep elements inline */
+  justify-content: space-between; /* Align elements horizontally */
+  width: 100%; /* Make the form span the full width */
+}
+
+.tracking-form input[type="text"] {
+  flex: 1; /* Allow input to grow and fill available space */
+  padding: 10px; /* Add some padding for input */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 1em; /* Set input font size */
+}
+
+.tracking-form button[type="submit"] {
+  background-color: #8bc34a; /* Forest green background for button */
+  color: #fff; /* White text color */
+  padding: 10px 20px; /* Add padding for button content */
+  border: none; /* Remove default button border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Indicate hover interaction */
+}
+
+.tracking-form button[type="submit"]:hover {
+  background-color: #7aa03c; /* Darker green on hover */
 }

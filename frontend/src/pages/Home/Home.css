@@ -8,6 +8,7 @@
   background-position: center;
   border-radius: 20px; /* add a rounded corner to the background */
   overflow: hidden; /* add this to ensure the background image doesn't overflow */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* subtle shadow for a better look */
 }
 
 .hero {
@@ -16,6 +17,7 @@
   text-align: center;
   color: black;
   border-radius: 20px; /* add a rounded corner to the hero section */
+  margin-bottom: 20px; /* add margin to separate from content below */
 }
 
 .hero h1 {
@@ -30,12 +32,13 @@
 
 .crops {
   display: flex;
+  flex-wrap: wrap; /* allow items to wrap on smaller screens */
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
 .crop-image {
-  width: 30%;
+  width: calc(33% - 20px); /* ensure proper spacing */
   height: 150px;
   object-fit: cover;
   border-radius: 10px; /* add a rounded corner to the image */
@@ -73,11 +76,13 @@
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap; /* allow items to wrap on smaller screens */
   justify-content: space-between;
 }
 
 .features li {
-  margin-right: 20px;
+  flex: 1 1 calc(33% - 20px); /* ensure proper spacing */
+  margin: 10px 0;
 }
 
 .features i {
@@ -99,9 +104,12 @@
   padding: 20px;
   border-left: 4px solid #ccc;
   border-radius: 10px; /* add a rounded corner to the testimonial blockquote */
+  background-color: #f9f9f9; /* subtle background for better readability */
 }
 
 .testimonials cite {
   font-size: 16px;
   color: #666;
+  display: block; /* ensure proper spacing */
+  margin-top: 10px;
 }

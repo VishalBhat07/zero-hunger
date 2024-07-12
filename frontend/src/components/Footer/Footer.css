@@ -63,3 +63,22 @@
     text-align: center;
   }
 }
+
+/* Footer.css */
+
+.footer-social-icons {
+  margin-top: 20px; /* Space above social icons */
+}
+
+.footer-social-icons a {
+  color: #fff; /* White color for icon */
+  font-size: 30px; /* Icon size */
+  margin-right: 10px; /* Space between icons */
+  text-decoration: none; /* Remove underline from icons */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.footer-social-icons a:hover {
+  color: #0b0b0b; /* Change color on hover to green */
+}
+
