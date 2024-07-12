@@ -1,0 +1,107 @@
+/* Home.css */
+.home-page {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-image: url("farm-background.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px; /* add a rounded corner to the background */
+  overflow: hidden; /* add this to ensure the background image doesn't overflow */
+}
+
+.hero {
+  background-color: #8bc34a; /* Forest green */
+  padding: 20px;
+  text-align: center;
+  color: black;
+  border-radius: 20px; /* add a rounded corner to the hero section */
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.crops {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.crop-image {
+  width: 30%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px; /* add a rounded corner to the image */
+  margin: 10px;
+  transition: transform 0.3s ease; /* add a transition effect for the hover effect */
+}
+
+.crop-image:hover {
+  transform: scale(1.1); /* scale the image up on hover */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* add a box shadow on hover */
+}
+
+.hero .btn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.1); /* scale the image up on hover */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* add a box shadow on hover */
+}
+
+.features {
+  margin-top: 40px;
+}
+
+.features ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.features li {
+  margin-right: 20px;
+}
+
+.features i {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.features h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.testimonials {
+  margin-top: 40px;
+}
+
+.testimonials blockquote {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-left: 4px solid #ccc;
+  border-radius: 10px; /* add a rounded corner to the testimonial blockquote */
+}
+
+.testimonials cite {
+  font-size: 16px;
+  color: #666;
+}
