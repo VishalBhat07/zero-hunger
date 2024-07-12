@@ -1,5 +1,6 @@
 // Home.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 
 const Home = () => {
@@ -13,7 +14,9 @@ const Home = () => {
           <img className="crop-image" src="../../public/crop2.jpg" alt="" />
           <img className="crop-image" src="../../public/crop3.jpg" alt="" />
         </div>
-        <button className="btn">Explore Our Crops</button>
+        <Link to="/MarketPlace">
+          <button className="btn">Explore Our Crops</button>
+        </Link>
       </header>
       <section className="features">
         <h2>Our Features</h2>
